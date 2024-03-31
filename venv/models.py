@@ -39,6 +39,6 @@ class Post(db.Model):
   comment=db.Column(db.String(1000),
                      nullable=False,)
   
-  user_ref =db.Column(db.Integer, db.ForeignKey('users.user_id'))
+  user_ref =db.Column(db.Integer, db.ForeignKey('users.user_id', ondelete='CASCADE'))
   
   owner_id = db.relationship('User')
